@@ -59,93 +59,24 @@ class ViewController: UIViewController {
     }
     @IBAction func addButton(_ sender: UIButton) {
         add.tintColor = UIColor.black
-        numberArray[0] = numberArray[1]
-        if let okCurrent = Int(resultText.text!){
-            numberArray[1] = okCurrent
-        }
-        switch operation {
-        case 1:
-            resultText.text = String(numberArray[0] + numberArray[1])
-            numberArray[1] += numberArray[0]
-        case 2:
-            resultText.text = String(numberArray[0] - numberArray[1])
-            numberArray[1] = numberArray[0] - numberArray[1]
-        case 3:
-            resultText.text = String(numberArray[0] * numberArray[1])
-            numberArray[1] *= numberArray[0]
-        default:
-            print("always return")
-        }
+        calcuation()
         operation = 1
-        isCaculating = true
     }
     @IBAction func subButton(_ sender: UIButton) {
         sub.tintColor = UIColor.black
-        numberArray[0] = numberArray[1]
-        if let okCurrent = Int(resultText.text!){
-            numberArray[1] = okCurrent
-        }
-        switch operation {
-        case 1:
-
-            resultText.text = String(numberArray[0] + numberArray[1])
-            numberArray[1] += numberArray[0]
-        case 2:
-            resultText.text = String(numberArray[0] - numberArray[1])
-            numberArray[1] = numberArray[0] - numberArray[1]
-        case 3:
-            resultText.text = String(numberArray[0] * numberArray[1])
-            numberArray[1] *= numberArray[0]
-        default:
-            print("always return")
-        }
+        calcuation()
         operation = 2
-        isCaculating = true
     }
     @IBAction func resultButton(_ sender: UIButton) {
         setBlackToBlue()
-        
-        numberArray[0] = numberArray[1]
-        if let okCurrent = Int(resultText.text!){
-            numberArray[1] = okCurrent
-        }
-        switch operation {
-        case 1:
-            resultText.text = String(numberArray[0] + numberArray[1])
-            numberArray = [0,0]
-        case 2:
-            resultText.text = String(numberArray[0] - numberArray[1])
-            numberArray = [0,0]
-        case 3:
-            resultText.text = String(numberArray[0] * numberArray[1])
-            numberArray = [0,0]
-        default:
-            print("always return")
-        }
+        calcuation()
         operation = 0
     }
 
     @IBAction func multi(_ sender: UIButton) {
         multi.tintColor = UIColor.black
-        numberArray[0] = numberArray[1]
-        if let okCurrent = Int(resultText.text!){
-            numberArray[1] = okCurrent
-        }
-        switch operation {
-        case 1:
-            resultText.text = String(numberArray[0] + numberArray[1])
-            numberArray[1] += numberArray[0]
-        case 2:
-            resultText.text = String(numberArray[0] - numberArray[1])
-            numberArray[1] = numberArray[0] - numberArray[1]
-        case 3:
-            resultText.text = String(numberArray[0] * numberArray[1])
-            numberArray[1] *= numberArray[0]
-        default:
-            print("always return")
-        }
+        calcuation()
         operation = 3
-        isCaculating = true
     }
     
     
@@ -153,6 +84,27 @@ class ViewController: UIViewController {
         add.tintColor = UIColor.blue
         sub.tintColor = UIColor.blue
         multi.tintColor = UIColor.blue
+    }
+    
+    func calcuation(){
+        numberArray[0] = numberArray[1]
+        if let okCurrent = Int(resultText.text!){
+            numberArray[1] = okCurrent
+        }
+        switch operation {
+        case 1:
+            resultText.text = String(numberArray[0] + numberArray[1])
+            numberArray[1] += numberArray[0]
+        case 2:
+            resultText.text = String(numberArray[0] - numberArray[1])
+            numberArray[1] = numberArray[0] - numberArray[1]
+        case 3:
+            resultText.text = String(numberArray[0] * numberArray[1])
+            numberArray[1] *= numberArray[0]
+        default:
+            print("always return")
+        }
+        isCaculating = true
     }
 }
 

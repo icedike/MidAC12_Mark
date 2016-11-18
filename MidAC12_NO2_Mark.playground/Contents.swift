@@ -15,7 +15,7 @@ func sortArray(array1:[Int], array2:[Int] ) -> [Int]{
     for i in 0 ..< resultArray.count-2{
         for j in 0 ..< resultArray.count-1-i {
             if resultArray[j] > resultArray[j+1] {
-                var temp = resultArray[j]
+                let temp = resultArray[j]
                 resultArray[j] = resultArray[j+1]
                 resultArray[j+1] = temp
             }
@@ -26,4 +26,6 @@ func sortArray(array1:[Int], array2:[Int] ) -> [Int]{
 }
 
 
-sortArray(array1: [5,7,3,5,9,1,0,7,3], array2: [2,3,3,6,10,5,7])
+sortArray(array1: [5,7,3,5,9,1,0,7,3], array2: [2,3,3,6,10,5,4,7,10])
+sortArray(array1: [1,1,1,1,1], array2: [2,2,2,2])
+sortArray(array1: [1,2,1,2,1,2], array2: [3,4,3,4,3,4])
